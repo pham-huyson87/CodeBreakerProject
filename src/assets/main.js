@@ -14,6 +14,10 @@ function guess() {
     } else {
         attempt.value++;
     }
+
+    if (getResults(input.value)) {
+        setMessage("You Win! :)");
+    }
 }
 
 function setHiddenFields() {
