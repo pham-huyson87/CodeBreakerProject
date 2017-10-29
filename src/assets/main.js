@@ -46,3 +46,34 @@ function validateInput(inputValue) {
 
     return true;
 }
+
+function getResults(code) {
+
+    let results = document.getElementById("results");
+    let result = "";
+
+    result += '<div class="row"><span class="col-md-6">';
+
+    for (let i=0; i<code.length; i++) {
+
+        let currentUserGuessDigit = code.charAt(i);
+        let currentAnswerDigit = answer.value.charAt(i);
+
+        if (currentUserGuessDigit === currentAnswerDigit)
+        {
+            result += '<span class="glyphicon glyphicon-ok"></span>';
+        }
+        else if (answer.value.indexOf(currentUserGuessDigit) != -1)
+        {
+            result += '<span class="glyphicon glyphicon-transfer"></span>';
+        }
+        else
+        {
+            result += '<span class="glyphicon glyphicon-remove"></span>';
+        }
+    }
+
+    result += "</div>";
+
+    results.innerHTML += result;
+}
