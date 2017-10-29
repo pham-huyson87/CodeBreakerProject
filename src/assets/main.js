@@ -7,5 +7,17 @@ function guess() {
 }
 
 function setHiddenFields() {
-    answer.value = Math.floor(Math.random() * 9999);
+
+    let randomNumber = Math.floor(Math.random() * 9999);
+    let randomNumberString = randomNumber.toString();
+
+    if (randomNumberString.length < 4) {
+        let paddingLength = 4 - randomNumberString.length;
+
+        for (let i = 0; i < paddingLength; i++) {
+            randomNumberString = "0" + randomNumberString;
+        }
+    }
+
+    answer.value = randomNumberString;
 }
