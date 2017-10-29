@@ -51,6 +51,7 @@ function getResults(code) {
 
     let results = document.getElementById("results");
     let result = "";
+    let correctDigits = 0;
 
     result += '<div class="row"><span class="col-md-6">';
 
@@ -62,8 +63,9 @@ function getResults(code) {
         if (currentUserGuessDigit === currentAnswerDigit)
         {
             result += '<span class="glyphicon glyphicon-ok"></span>';
+            correctDigits++;
         }
-        else if (answer.value.indexOf(currentUserGuessDigit) != -1)
+        else if (answer.value.indexOf(currentUserGuessDigit) !== -1)
         {
             result += '<span class="glyphicon glyphicon-transfer"></span>';
         }
@@ -76,4 +78,6 @@ function getResults(code) {
     result += "</div>";
 
     results.innerHTML += result;
+
+    return correctDigits === answer.value.length;
 }
