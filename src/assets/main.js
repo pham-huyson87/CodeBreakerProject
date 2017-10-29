@@ -20,4 +20,5 @@ function setHiddenFields() {
     }
 
     answer.value = randomNumberString;
+    attempt.value = 0;
 }
