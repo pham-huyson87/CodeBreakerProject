@@ -1,5 +1,6 @@
 let answer = document.getElementById('answer');
 let attempt = document.getElementById('attempt');
+let message = document.getElementById('message');
 
 function guess() {
     let input = document.getElementById('user-guess');
@@ -24,4 +25,8 @@ function setHiddenFields() {
 
     answer.value = randomNumberString;
     attempt.value = 0;
+}
+
+function setMessage(messageValue) {
+    message.innerHTML = messageValue;
 }
