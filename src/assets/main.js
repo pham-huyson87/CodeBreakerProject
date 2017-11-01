@@ -94,7 +94,7 @@ function getResults(code) {
 
 function showAnswer(isWin) {
 
-    var code = document.getElementById("code");
+    let code = document.getElementById("code");
     code.innerHTML = answer.value;
 
     if (isWin) {
@@ -103,3 +103,17 @@ function showAnswer(isWin) {
         code.className += " failure";
     }
 }
+
+function showReplay() {
+    
+    let guessingDiv = document.getElementById("guessing-div");
+    let replayDiv = document.getElementById("replay-div");
+
+    guessingDiv.style.display = "none";
+    replayDiv.style.display = "block";
+
+}
+
+
+
+
