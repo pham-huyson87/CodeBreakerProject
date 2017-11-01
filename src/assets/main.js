@@ -17,9 +17,13 @@ function guess() {
 
     if (getResults(input.value)) {
         setMessage("You Win! :)");
+        showAnswer(true);
+        showReplay();
     } else {
         if (attempt.value >= 10) {
             setMessage("You Lose! :(");
+            showAnswer(false);
+            showReplay();
         } else {
             setMessage("Incorrect, try again.");
         }
@@ -111,7 +115,6 @@ function showReplay() {
 
     guessingDiv.style.display = "none";
     replayDiv.style.display = "block";
-
 }
 
 
