@@ -91,3 +91,15 @@ function getResults(code) {
 
     return correctDigits === answer.value.length;
 }
+
+function showAnswer(isWin) {
+
+    var code = document.getElementById("code");
+    code.innerHTML = answer.value;
+
+    if (isWin) {
+        code.className += " success";
+    } else {
+        code.className += " failure";
+    }
+}
